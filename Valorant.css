@@ -1,0 +1,494 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #000;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0 40px;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    list-style: none;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin-left: 30px;
+    transition: transform 0.5s ;
+}
+
+nav ul li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    
+}
+
+nav img{
+    width: 100px;
+}
+
+
+nav ul li div {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    padding: 6px 0;
+    background: #000000;
+
+}
+
+nav ul li div::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    height: 2px;
+    background: #ff4655;
+    transition: 0.4s;
+}
+
+nav ul li:hover div::after {
+    background: #ece8e1;
+}
+nav ul li:hover{
+    transform: translateY(-5px);
+
+}
+
+
+/* --------------------------------------- */
+
+.section1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 91.9vh;
+
+}
+
+.section1::before{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to top,#ffffff, transparent);
+    z-index: 100;
+}
+.right{
+    width: 40vw;
+    height: 15vh;
+    position: absolute;
+    top: 250px;
+    left: 0;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 3;
+
+}
+
+
+
+.namevalorant{
+    position: absolute;
+    height: 300px;
+    top: 150%;
+    left: 0;
+    z-index: 2;
+
+}
+
+.squad{
+    position: absolute;
+    height: 800px;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    
+}
+
+.flash{
+    width: 100px;
+    height: 600px;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    filter: blur(200px);
+    z-index: 1;
+}
+.black{
+    height: 91.9vh;
+    width: 100%;
+    background-color: #000;
+    z-index: 1;
+    position: absolute;
+    height: 800px;
+    right: 0;
+    bottom: 0;
+}
+.section1 button {
+    all: unset;
+    position: relative;
+    cursor: pointer;
+}
+
+button div {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    padding: 15px 0;
+    background: #000000;
+    border: 2px solid white;
+
+}
+
+button div::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 5px;
+    height: 5px;
+    background: #ff0015;
+    transition: 0.4s;
+
+}
+
+button:hover div::after {
+    background: #ece8e1;
+}
+
+button div span {
+    position: absolute;
+    width: 120%;
+    height: 110%;
+    transform: translate(-100%, -20px);
+    background: #ff4655;
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+    transition: 0.4s;
+}
+
+button:hover div span {
+    transform: translate(-10%, -20px);
+}
+
+button div a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 20px 80px;
+}
+/* ---- animation */
+.bubble{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    
+}
+
+.bubble span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #ff4655;
+    margin: 0 12px;
+    border-radius: 50%;
+    animation: anim 10s linear infinite;
+    animation-duration: calc(120s/var(--i));
+    z-index: 3;
+
+}
+.bubble span:nth-child(even){
+    background-color: rgb(255, 255, 255);
+}
+
+@keyframes anim {
+    0%{
+        transform: translateY(90vh) scale(0);
+    }    
+
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+
+}
+
+/* ---------------- */
+.section2{
+    height: 100vh;
+    background-color: #ffffff;
+    color: #000;
+
+}
+.section2::before{
+    content:'';
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom,#ffffff, transparent);
+    z-index: 100;
+}
+.mapback{
+    width: 1300px;
+    height: 100vh;
+    background-color: aquamarine;
+    background-image: url(image/map.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+
+}
+.mapwhite{
+    position: absolute;
+    top: 190.8%;
+    left: 30%;
+    height: 10vh;
+    width: 20vw;
+    background-color: #ffffff;
+    filter: blur(5px);
+    z-index: 2;
+
+}
+.mapwhite3{
+    position: absolute;
+    left: 20%;
+    top: 150%;
+    height: 50vh;
+    width: 600px;
+    background-color: #ffffff;
+    filter: blur(20px);
+    z-index: 2;
+    
+}
+.mapwhite4{
+    position: absolute;
+    left: 20%;
+    top: 100%;
+    height: 50vh;
+    width: 600px;
+    background-color: #ffffff;
+    filter: blur(20px);
+    z-index: 2;
+
+}
+
+.section2 h1{
+    position: absolute;
+    top :100%;
+    left: 28%;
+    font-size: 120px;
+    z-index: 2;
+
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top :140%;
+    left: 30%;
+    z-index: 4;
+}
+
+.section2 button {
+    all: unset;
+    position: absolute;
+    cursor: pointer;
+    top :165%;
+    left: 30%;
+    z-index: 4;
+}
+
+.section2 button div {
+    background: #ffffff;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.section2 button div a {
+    color: #000000;
+}
+
+/* ---- animation */
+.bubble2{
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    height: 100%;
+    width: 10%;
+    z-index: 5;
+
+
+}
+
+.x{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    animation: anim2 60s linear infinite;
+}
+
+
+@keyframes anim2 {
+    0%{
+        transform: translateX(-14vh) scale(0.5);
+    }     
+
+    100%{
+        transform: translateX(2vh) scale(1);
+    }
+
+}
+
+
+/* ---------------- */
+.section3{
+    height: 100vh;
+    background-image: url(image/bgs3.png);
+    background-repeat: no-repeat;
+    backdrop-filter: inherit;
+    background-size: cover;
+    color: #000;
+    z-index: 100;
+}
+
+.section3::before{
+    content:'';
+    position: absolute;
+    top:200%;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom,#ffffff, transparent);
+    z-index: 100;
+}
+
+.yuro{
+    width: 500px;
+    position: absolute;
+    top: 208%;
+    left: 200px;
+    animation: yuroo 5s linear infinite;
+}
+
+.reaz{
+    width: 500px;
+    position: absolute;
+    top: 206%;
+    left: -50px;
+    animation: yuroo 5s linear infinite;
+}
+
+@keyframes yuroo {
+    0%{
+        transform: translateY(0);
+    }     
+    40%{
+        transform: translateY(10px);
+    }  
+    60%{
+        transform: translateY(20px);
+    }  
+    80%{
+        transform: translateY(10px);
+    }  
+    100%{
+        transform: translateY(0);
+    }
+
+}
+
+
+.section3 h1{
+    position: absolute;
+    top :215%;
+    right: 100px;
+    font-size: 120px;
+    color: white;
+
+}
+
+.title2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top :235%;
+    left: 56%;
+    color: white;
+}
+
+.section3 button {
+    all: unset;
+    position: absolute;
+    cursor: pointer;
+    top :262%;
+    left: 56%;
+}
+
+.section3 button div {
+    background: #ff4655;
+    border: 2px solid rgb(255, 254, 254);
+
+}
+
+.section3 button div a {
+    color: #ffffff;
+}
+
+.section3 button :hover {
+    color: #ff4655;
+}
+
+
+.section3 button:hover div::after {
+    background: #ff4655;
+}
+
+.section3 button div::after {
+    background: #ffffff;
+
+}
+
+.section3 button div span {
+    background: #fdfdfd;
+}
+
+
